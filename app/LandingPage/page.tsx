@@ -593,12 +593,23 @@ export function LandingPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
               {FEATURES.map((f) => (
                 <div
                   key={f.title}
                   className={`group bg-[#0D1117] border-white/5 rounded-2xl p-7 transition-all ease-in cursor-default duration-300
-                   hover:-translate-y-2 shadow-[inset_0_0_12px_rgba(255,255,255,0.07)]`}
+                   hover:-translate-y-2 `}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = `${f.color}40`;
+                    e.currentTarget.style.boxShadow = `0 0 30px ${f.glow}`;
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor =
+                      "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
                 >
                   <div
                     className="w-11 h-11 flex items-center justify-center mb-5 rounded-xl transition-all ease-in-out duration-300 group-hover:-rotate-12"
