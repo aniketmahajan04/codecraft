@@ -14,6 +14,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Github from "@/public/github-logo.svg";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const NAV_LINKS = ["Features", "Pricing", "Docs", "Blog", "Changelog"];
 const FEATURES = [
@@ -626,6 +628,60 @@ export function LandingPage() {
                   <p className="text-sm text-[#6B7280] m-0">{f.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="pt-[80px] pb-[100px]">
+          <div className="max-w-3xl text-center mx-auto px-6">
+            <div
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(124,58,237,0.15), rgba(79,70,229,0.08))",
+              }}
+              className="relative border border-[#7c3aed40] rounded-3xl
+            pt-[60px] pb-[60px] pr-[48px] pl-[48px] overflow-hidden"
+            >
+              <div
+                style={{
+                  background:
+                    "radial-gradient(rgba(124,58,237,0.2), transparent 70%)",
+                }}
+                className="absolute top-[-60px] right-[-60px] w-[200px] h-[200px] rounded-full "
+              />
+              <h2
+                style={{
+                  fontSize: "clamp(24px, 4vw, 34px)",
+                }}
+                className="mt-4 font-bold tracking-tight text-[#F1F5F9]"
+              >
+                Ready to build something great?
+              </h2>
+
+              <p className="mt-9 mb-9 text-[16px] text-[#6B7280] leading-[1.6]">
+                Join 32,000+ developers who ship faster with CodeCrafts.
+              </p>
+              <Button
+                style={{
+                  background: "linear-gradient(135deg, #7C3AED, #5B21B6)",
+                  boxShadow: "0 0 28px rgba(124,58,237,0.45)",
+                }}
+                className={cn(
+                  "text-white text-[16px] font-bold cursor-pointer",
+                  "flex items-center gap-2.5 mx-auto px-7 py-4 rounded-xl transition-all",
+                )}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 0 40px rgba(124,58,237,0.65)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 0 28px rgba(124,58,237,0.45)")
+                }
+              >
+                Start building now
+              </Button>
             </div>
           </div>
         </section>
