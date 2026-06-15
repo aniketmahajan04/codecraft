@@ -9,6 +9,8 @@ import {
   Share2,
   Shield,
   Sparkles,
+  X,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -686,6 +688,41 @@ export function LandingPage() {
           </div>
         </section>
       </section>
+
+      <footer className="border border-t-[#e1ffff0f] pr-[40px] pt-[40px] pb-[40px]">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
+            <div
+              className="w-6 h-6 rounded-[6px] bg-[linear-gradient(135deg,#7C3AED,#4F46E5)] flex items-center justify-center
+            "
+            >
+              <Zap size={11} fill="white" stroke="none" />
+            </div>
+            <span className="text-[#6B7280] text-sm">
+              © 2025 CodeCraft. Open source under MIT.
+            </span>
+          </div>
+          <div className="flex items-center gap-5">
+            {["Privacy", "Terms", "Status", "Docs"].map((item) => (
+              <Link
+                key={1}
+                href="#"
+                className="text-[#4B5563] text-sm no-underline"
+              >
+                {item}
+              </Link>
+            ))}
+            <div className="flex items-center gap-3">
+              <Link href="#">
+                <Image src={Github} alt="github" className="w-5 h-5" />
+              </Link>
+              <Link href="#">
+                <X size={16} className="text-[#4B5563]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
