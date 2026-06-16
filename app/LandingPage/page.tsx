@@ -164,37 +164,26 @@ function NavBar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          {NAV_LINKS.map((link) => (
-            <a
+          {["Features", "Pricing", "Docs", "Blog", "Changelog"].map((link) => (
+            <Link
               key={link}
-              href={`${link.toLowerCase()}`}
-              className="text-[#6b7280] text-[13px] font-semibold"
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#E5E7EB")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#6B7280")}
+              href={`/${link}`}
+              className="text-[#6b7280] text-[13px] font-semibold transition-colors duration-200 hover:text-[#E5E7EB]"
             >
               {link}
-            </a>
+            </Link>
           ))}
         </div>
         {/* CTAs */}
         <div className="flex items-center gap-4">
           <Link
-            href="/dashboard"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              color: "#9CA3AF",
-              fontSize: "13px",
-              fontWeight: 500,
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#E5E7EB")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#9CA3AF")}
+            href="/signup"
+            className=" bg-none border-none text-[#9CA3AF] text-[13px] font-medium hover:text-[#E5E7EB] transition-all duration-200"
           >
             Sign in
           </Link>
           <Link
-            href="/dashboard"
+            href="/"
             className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all 
             "
             style={{
@@ -207,12 +196,12 @@ function NavBar() {
               boxShadow: "0 0 16px rgba(124,58,237,0.35)",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.boxShadow =
-                "0 0 24px rgba(124,58,237,0.55)")
+            (e.currentTarget.style.boxShadow =
+              "0 0 24px rgba(124,58,237,0.55)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.boxShadow =
-                "0 0 16px rgba(124,58,237,0.35)")
+            (e.currentTarget.style.boxShadow =
+              "0 0 16px rgba(124,58,237,0.35)")
             }
           >
             Get started
@@ -235,8 +224,8 @@ export function LandingPage() {
       <NavBar />
 
       {/* Hero Section  */}
-      <section className="relative pt-[140px] pb-[140px] w-full">
-        <div className="absolute top-[10%] left-[50%] transform -translate-x-1/2  h-[500px] w-[700px] bg-[radial-gradient(ellipse, rgba(124, 58, 237, 0.12) 0%, transparent 70%)] pointer-events-none" />
+      <section className="relative pt-35 pb-35 w-full">
+        <div className="absolute top-[10%] left-[50%] transform -translate-x-1/2  h-125 w-175 bg-[radial-gradient(ellipse, rgba(124, 58, 237, 0.12) 0%, transparent 70%)] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6">
           {/* Badge */}
@@ -290,12 +279,12 @@ export function LandingPage() {
               className="group flex items-center gap-2.5 px-6 py-3.5 rounded-xl transition-all ease-in-out
                duration-300 hover:-translate-y-2 text-white cursor-pointer border border-white/10"
               onMouseEnter={(e) =>
-                (e.currentTarget.style.boxShadow =
-                  "0 0 36px rgba(124,58,237,0.6), 0 1px 0 rgba(255,255,255,0.1) inset")
+              (e.currentTarget.style.boxShadow =
+                "0 0 36px rgba(124,58,237,0.6), 0 1px 0 rgba(255,255,255,0.1) inset")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.boxShadow =
-                  "0 0 24px rgba(124,58,237,0.4), 0 1px 0 rgba(255,255,255,0.1) inset")
+              (e.currentTarget.style.boxShadow =
+                "0 0 24px rgba(124,58,237,0.4), 0 1px 0 rgba(255,255,255,0.1) inset")
               }
             >
               <Play
@@ -321,12 +310,12 @@ export function LandingPage() {
                 textDecoration: "none",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(255,255,255,0.08)")
+              (e.currentTarget.style.backgroundColor =
+                "rgba(255,255,255,0.08)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(255,255,255,0.05)")
+              (e.currentTarget.style.backgroundColor =
+                "rgba(255,255,255,0.05)")
               }
             >
               <Image src={Github} alt="github" className="w-5 h-5" />
@@ -336,7 +325,7 @@ export function LandingPage() {
         </div>
 
         {/* Product Demo Section */}
-        <section className="p-[120px]">
+        <section className="p-30">
           <div className="max-w-6xl mx-auto px-6">
             <div
               className="rounded-2xl overflow-hidden"
@@ -635,7 +624,7 @@ export function LandingPage() {
         </section>
 
         {/* CTA */}
-        <section className="pt-[80px] pb-[100px]">
+        <section className="pt-20 pb-25">
           <div className="max-w-3xl text-center mx-auto px-6">
             <div
               style={{
@@ -643,14 +632,14 @@ export function LandingPage() {
                   "linear-gradient(135deg, rgba(124,58,237,0.15), rgba(79,70,229,0.08))",
               }}
               className="relative border border-[#7c3aed40] rounded-3xl
-            pt-[60px] pb-[60px] pr-[48px] pl-[48px] overflow-hidden"
+            pt-15 pb-15 pr-12 pl-12 overflow-hidden"
             >
               <div
                 style={{
                   background:
                     "radial-gradient(rgba(124,58,237,0.2), transparent 70%)",
                 }}
-                className="absolute top-[-60px] right-[-60px] w-[200px] h-[200px] rounded-full "
+                className="absolute -top-15 -right-15 w-50 h-50 rounded-full "
               />
               <h2
                 style={{
@@ -674,12 +663,12 @@ export function LandingPage() {
                   "flex items-center gap-2.5 mx-auto px-7 py-4 rounded-xl transition-all",
                 )}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.boxShadow =
-                    "0 0 40px rgba(124,58,237,0.65)")
+                (e.currentTarget.style.boxShadow =
+                  "0 0 40px rgba(124,58,237,0.65)")
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.boxShadow =
-                    "0 0 28px rgba(124,58,237,0.45)")
+                (e.currentTarget.style.boxShadow =
+                  "0 0 28px rgba(124,58,237,0.45)")
                 }
               >
                 Start building now
@@ -689,7 +678,7 @@ export function LandingPage() {
         </section>
       </section>
 
-      <footer className="border border-t-[#e1ffff0f] pr-[40px] pt-[40px] pb-[40px]">
+      <footer className="border border-t-[#e1ffff0f] pr-10 pt-10 pb-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <div
@@ -705,9 +694,9 @@ export function LandingPage() {
           <div className="flex items-center gap-5">
             {["Privacy", "Terms", "Status", "Docs"].map((item) => (
               <Link
-                key={1}
+                key={item}
                 href="#"
-                className="text-[#4B5563] text-sm no-underline"
+                className="text-[#4B5563] text-sm no-underline cursor-pointer"
               >
                 {item}
               </Link>
